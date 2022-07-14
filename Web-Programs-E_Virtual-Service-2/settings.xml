@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockService port="8094" path="/" host="localhost" name="Web-Programs-E_Virtual Service 2" routeModeEnabled="false" httpSecure="true" routeEndpoint="https://qa.ameren.io/web-programs-e" addUnmatchedOperation="true" id="bb6e76a4-e323-4f75-893c-f51962801620" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="bb6e76a4-e323-4f75-893c-f51962801620fileName">Web-Programs-E_Virtual-Service-2</con:setting>
+  </con:settings>
+  <con:properties/>
+  <con:constraints>
+    <con:congestion>0</con:congestion>
+    <con:inputBandwidth>-1</con:inputBandwidth>
+    <con:outputBandwidth>-1</con:outputBandwidth>
+    <con:maxThreadPoolCapacity>20</con:maxThreadPoolCapacity>
+    <con:coreThreadPoolCapacity>5</con:coreThreadPoolCapacity>
+    <con:minApplicationDelay>0</con:minApplicationDelay>
+    <con:virtError>
+      <con:start>0</con:start>
+      <con:endless>true</con:endless>
+    </con:virtError>
+  </con:constraints>
+  <con:headerValidator type="NONE"/>
+</con:restMockService>

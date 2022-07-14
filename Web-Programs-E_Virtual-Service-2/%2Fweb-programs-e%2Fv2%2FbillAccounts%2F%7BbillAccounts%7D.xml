@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-programs-e/v2/billAccounts/{billAccounts}" method="GET" resourcePath="/web-programs-e/v2/billAccounts/{billAccounts}" id="bc5c0988-1e04-401f-b133-6f9554bb0afd" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="bc5c0988-1e04-401f-b133-6f9554bb0afdfileName">%2Fweb-programs-e%2Fv2%2FbillAccounts%2F%7BbillAccounts%7D</con:setting>
+  </con:settings>
+  <con:defaultResponse>For isEligiblePrograms=false</con:defaultResponse>
+  <con:dispatchStyle>PARAMETER</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath>qps = mockRequest.getQueryString().split('&amp;')
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode(it)}}  
+
+for( String values : qps ) {
+    if ( values.contains("delay=") ) {
+         log.info("Simulating response time" + values)
+         
+        sleep(values.split("=")[1] as int)
+    }
+}
+log.info(mapParams)</con:dispatchPath>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer>
+    <con:ParameterDispatcherRule>
+      <con:ruleName>isEligiblePrograms=false</con:ruleName>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EQUALS</con:parameterOperationType>
+        <con:parameterName>isEligiblePrograms</con:parameterName>
+        <con:parameterValue>false</con:parameterValue>
+      </con:parameterDispatcherCondition>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EQUALS</con:parameterOperationType>
+        <con:parameterName>isEligiblePrograms</con:parameterName>
+        <con:parameterValue>true</con:parameterValue>
+      </con:parameterDispatcherCondition>
+      <con:responseName>For isEligiblePrograms=false</con:responseName>
+    </con:ParameterDispatcherRule>
+  </con:parameterDispatcherRuleContainer>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="For isEligiblePrograms=false" id="dd94073c-d7b8-464a-bd4a-88e71597af44" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+if (mapParams ['delay']) {
+    for ( String values : qps ) {
+        if ( values.contains ("delay=") ) {
+            def delay = (values.split("=") [1] as int ) 
+                log.info ('hit') 
+                sleep (delay)
+        }
+    }
+} else {
+    int time = 200
+    log.info ('2ndHit')
+sleep (time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": "web-programs-e",
+  "timestamp": "2022-06-07T19:14:30.953Z",
+  "version": "1.0.13-SNAPSHOT",
+  "correlationId": "0ce01e20-e696-11ec-94bd-12f128fc2375",
+  "data": [
+    {
+      "programOptionStatus": "Not Available",
+      "programOptionType": "Flex Pay",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Available",
+      "programOptionType": "Paperless",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Available",
+      "programOptionType": "DirectPay",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Not Available",
+      "programOptionType": "Budget Bill",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Not Available",
+      "programOptionType": "Pure Power",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Available",
+      "programOptionType": "Landlord",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Not Available",
+      "programOptionType": "Community Solar",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Available",
+      "programOptionType": "HomeAreaNetwork",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Available",
+      "programOptionType": "ConnectMyData",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Available",
+      "programOptionType": "Warm Neighbor Cool Friends",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Enrolled",
+      "programOptionType": "Peak Time Rewards",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Available",
+      "programOptionType": "Power Smart Pricing",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Available",
+      "programOptionType": "Electric Vehicle",
+      "pending": false
+    },
+    {
+      "programOptionStatus": "Enrolled",
+      "programOptionType": "Pick a Due Date",
+      "pending": false
+    }
+  ]
+}</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Tue, 07 Jun 2022 19:14:30 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>
