@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-contact-mgmt-e/v2/billaccounts/11212/addresses" method="GET" resourcePath="/web-contact-mgmt-e/v2/billaccounts/11212/addresses" id="c0719dc9-ef82-4c09-986d-8c00f3ecab4a" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c0719dc9-ef82-4c09-986d-8c00f3ecab4afileName">%2Fweb-contact-mgmt-e%2Fv2%2Fbillaccounts%2F11212%2Faddresses</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="Response 2" id="7b3628e7-a3de-46c1-98bf-c1d82f3c0fdc" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode(it)}}  
+if (mapParams['delay']){
+    for( String values : qps ) {
+        if ( values.contains("delay=") ) {
+            def delay = (values.split("=")[1]as int)
+            sleep(delay)
+        }
+    }
+} else {
+    int time = 500
+    sleep(time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": "web-contact-mgmt-e",
+  "timestamp": "2022-07-06T20:39:27.898Z",
+  "version": "2.0.0",
+  "correlationId": "ba381b90-fd6b-11ec-9960-12d146e4502d",
+  "data": {
+    "addressID": 128136044,
+    "addressTypeCode": "M",
+    "addressTypeDescription": "Account",
+    "isReadOnly": "N",
+    "addressLine1": "28449605 NOTASTREET LN",
+    "addressLine2": null,
+    "addressLine3": null,
+    "city": "CLASH CITY",
+    "state": "MO",
+    "postalCode": "11111",
+    "country": "USA"
+  }
+}</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Wed, 06 Jul 2022 20:39:27 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>
