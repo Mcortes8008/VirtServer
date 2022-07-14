@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-premisedetails-e/v2/premises/{premiseNumber}/verify" method="GET" resourcePath="/web-premisedetails-e/v2/premises/{premiseNumber}/verify" id="a78686d2-5ce0-4162-bb94-323d6ca265fd" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a78686d2-5ce0-4162-bb94-323d6ca265fdfileName">%2Fweb-premisedetails-e%2Fv2%2Fpremises%2F%7BpremiseNumber%7D%2Fverify</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeScript/>
+  <con:response name="Response 200" id="c46b8f85-768f-4495-9ead-be2a1bbe0857" httpResponseStatus="200" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+if (mapParams ['delay']) {
+    for ( String values : qps ) {
+        if ( values.contains ("delay=") ) {
+            def delay = (values.split("=") [1] as int ) 
+                log.info ('delay') 
+                sleep (delay)
+        }
+    }
+} else {
+    int time = 200
+    log.info ('NoDelay')
+sleep (time)
+}</con:script>
+    <con:responseContent>{
+    "success": true,
+    "apiName": "web-premisedetails-e",
+    "timestamp": "2022-06-15T18:22:38.249Z",
+    "version": "2.0.3",
+    "correlationId": "217fd6c0-ecd8-11ec-95b4-12b9c6420e21",
+    "data": {
+        "premiseNumber": ${premiseNumber},
+        "premiseNumber2": 0,
+        "premiseLockSequence": 27,
+        "premiseLockSequence2": 0,
+        "companyCode": 17,
+        "companyCode2": 0,
+        "operatingCenterCode": "",
+        "operatingCenterCode2": "",
+        "premiseAddress": "709 S 8TH SAINT CHARLES MO 63301",
+        "hasLightingService": false,
+        "hasLandlordService": false,
+        "specialNotationCode": "",
+        "premiseMeterStatusCode": "",
+        "cutNonPay": false,
+        "premiseRevenueClass": "Residential",
+        "pays": [
+            {
+                "isPayAsYouSave": false,
+                "payAsYouSaveType": null,
+                "unbilledBalance": 0,
+                "remainingInstallments": 0,
+                "installmentAmount": 0
+            }
+        ],
+        "meters": [
+            {
+                "meterNumber": "43810573 ",
+                "meterPointLocation": "H",
+                "meterPointStatusCode": "O",
+                "meterPointTypeCode": "552",
+                "meterPointLocationCode": "H",
+                "meterType": "Electric",
+                "isAMI": true,
+                "isAMR": false
+            },
+            {
+                "meterNumber": "43810573 ",
+                "meterPointLocation": "H",
+                "meterPointStatusCode": "O",
+                "meterPointTypeCode": "552",
+                "meterPointLocationCode": "H",
+                "meterType": "Electric",
+                "isAMI": true,
+                "isAMR": false
+            }
+        ],
+        "rates": {
+            "tariffCode": "622",
+            "tariffDesc": "Evening/Morning Savers",
+            "eligibleTariffs": [
+                {
+                    "tariffCode": "326",
+                    "tariffDesc": "Anytime Users"
+                },
+                {
+                    "tariffCode": "608",
+                    "tariffDesc": "Overnight Savers - All-Year Round"
+                },
+                {
+                    "tariffCode": "624",
+                    "tariffDesc": "Overnight Savers - Summer Only"
+                },
+                {
+                    "tariffCode": "609",
+                    "tariffDesc": "Smart Savers - All-Year Round"
+                },
+                {
+                    "tariffCode": "623",
+                    "tariffDesc": "Smart Savers - Summer Only"
+                },
+                {
+                    "tariffCode": "621",
+                    "tariffDesc": "Ultimate Savers"
+                }
+            ]
+        }
+    }
+}</con:responseContent>
+  </con:response>
+</con:restMockAction>

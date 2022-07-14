@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-premisedetails-e/v2/billaccounts/{billAccount}" method="GET" resourcePath="/web-premisedetails-e/v2/billaccounts/{billAccount}" id="7b06505c-3220-4d11-b80d-9f17669483f9" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="7b06505c-3220-4d11-b80d-9f17669483f9fileName">%2Fweb-premisedetails-e%2Fv2%2Fbillaccounts%2F%7BbillAccount%7D</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="Response 2" id="14b13bda-0b70-406f-8b7c-3b8fa9358709" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+if (mapParams ['delay']) {
+    for ( String values : qps ) {
+        if ( values.contains ("delay=") ) {
+            def delay = (values.split("=") [1] as int ) 
+                log.info ('delay') 
+                sleep (delay)
+        }
+    }
+} else {
+    int time = 200
+    log.info ('NoDelay')
+sleep (time)
+}</con:script>
+    <con:responseContent><![CDATA[{
+  "success": true,
+  "apiName": "web-premisedetails-e",
+  "timestamp": "2022-06-15T18:29:05.116Z",
+  "version": "2.0.3",
+  "correlationId": "08f86e40-ecd9-11ec-8e87-0a64b33d16b7",
+  "data": [
+    {
+      "PremiseAddress": {
+        "addressID": 530180401,
+        "addressTypeCode": "P",
+        "addressTypeDescription": "Premise",
+        "isReadOnly": "N",
+        "addressLine1": "4322939 NOTASTREET LN",
+        "addressLine2": "",
+        "addressLine3": "",
+        "city": "CLASH CITY",
+        "state": "MO",
+        "postalCode": "11111",
+        "country": "USA"
+      },
+      "ServicePointMeterDetails": [
+        {
+          "ServicePointInfo": {
+            "servicePointNumber": 4890504
+          },
+          "ServicePointDetails": {
+            "billAccountNumber": ${billAccount},
+            "dateRateEffective": "2021-11-15",
+            "dateRateEffectiveSupply": "0001-01-01",
+            "energyTypeDescription": "Electric",
+            "rateCode": "326",
+            "rateDescription": "Rate 1M Res-Basic Elec Svc",
+            "rateShortDescription": "1M",
+            "servicePointStatusCode": "02",
+            "servicePointStatusDescription": "Active",
+            "serviceTypeCode": "0200",
+            "serviceTypeDescription": "Electric",
+            "supplyRateCode": "",
+            "supplyRateDescription": "",
+            "reportLinkUsages": "/sys/support/v2/reports/usages/billAccount/${billAccount}/servicePoint/4890504/fileName/Usages_Report_5301804229_2022-06-15?rateCode=326&serviceCode=0200&companyCode=17&amrnenv=PERF",
+            "reportLinkCharges": "/sys/support/v2/reports/charges/billAccount/${billAccount}/servicePoint/4890504/fileName/Charges_Report_5301804229_2022-06-15?rateCode=326&serviceCode=0200&companyCode=17&amrnenv=PERF",
+            "Meters": [
+              {
+                "meterInfo": {
+                  "meterPointNumber": 1
+                },
+                "meterDetails": {
+                  "companyTransformer": "Yes",
+                  "deliveryVoltage": "0-600v-Secondary",
+                  "effectiveDate": "2021-11-15",
+                  "equipmentSizeCode": "M38",
+                  "equipmentSizeDescription": "2S 200",
+                  "equipmentType": "",
+                  "flatAdjustment": 0,
+                  "gasMeterPressure": null,
+                  "isAMI": true,
+                  "isAMR": false,
+                  "isLegacy": false,
+                  "isNonStandard": false,
+                  "isTheMeterOutside": false,
+                  "locationID": "02517210008",
+                  "maopQuantity": 0,
+                  "manufacturerCode": "A",
+                  "manufacturerName": "L&G/Siemens/Duncan/PSI",
+                  "meteringVoltage": "0-600v-Secondary",
+                  "meterLocation": "Outside",
+                  "meterMultiplier": 1,
+                  "meterNumber": "44120432 ",
+                  "meterPhaseCode": "1",
+                  "meterPhaseDescription": "Single",
+                  "meterPointLocationCode": "0",
+                  "meterPointStatus": "Active",
+                  "meterPointStatusCode": "A",
+                  "meterPointTypeCode": "552",
+                  "meterPointTypeDescription": "552 KWH/REC",
+                  "meterProgram": "AMR K=1",
+                  "meterRelationshipCode": "00",
+                  "meterRelationshipDescription": "Totalized Add",
+                  "meterStatusCode": "O",
+                  "meterStatusDescription": "On",
+                  "modelType": "FOCAXSD 6D 3W D T R I",
+                  "numberOfDials": 6,
+                  "percentAdjustment": 0,
+                  "periodicUseCode": " ",
+                  "periodicUseDescription": "",
+                  "readingDeviceCode": "",
+                  "readingDeviceDescription": "",
+                  "readingInstructions": "",
+                  "readingKey": 464190573,
+                  "readingMethodCode": "C",
+                  "readingMethodDescription": "AMR/AMI Conversion",
+                  "readingUseCode": "15",
+                  "readingUseDescription": "Interval",
+                  "removeCompleteDate": "9999-12-31",
+                  "serviceDropNumber": 224590282,
+                  "serviceLocation": "Underground",
+                  "serviceLocationType": "TLM - Electric",
+                  "servicePhaseDescription": "Single Ph 120/240V 3 Wire",
+                  "serviceRegulatorLocationCode": " ",
+                  "serviceRegulatorLocationDescription": "",
+                  "setCompleteDate": "2021-11-06",
+                  "specialReadingInstruction": "",
+                  "supplyFeederVoltage": "",
+                  "transformerLossPercent": 0,
+                  "transformerLossFlat": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}]]></con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Wed, 15 Jun 2022 18:29:05 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>

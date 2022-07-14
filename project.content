@@ -6,3 +6,6 @@ Web-Contact-Mgmt-e-2\%2Fweb-contact-mgmt-e%2Fv2%2Fbillaccounts%2F11212%2Faddress
 Web-Contact-Mgmt-e-2\%2Fweb-contact-mgmt-e%2Fv2%2Fbillaccounts%2F11212%2Fphones%2F65177331.xml
 Web-Contact-Mgmt-e-2\%2Fweb-contact-mgmt-e%2Fv2%2Fbillaccounts%2F11212%2Fphones.xml
 Web-Programs-E_Virtual-Service-2\%2Fweb-programs-e%2Fv2%2FbillAccounts%2F%7BbillAccounts%7D.xml
+PremiseDetailsE-Virtual-Service-2\%2Fweb-premisedetails-e%2Fv2%2Fpremises%2F%7BpremiseNumber%7D.xml
+PremiseDetailsE-Virtual-Service-2\%2Fweb-premisedetails-e%2Fv2%2Fbillaccounts%2F%7BbillAccount%7D.xml
+PremiseDetailsE-Virtual-Service-2\%2Fweb-premisedetails-e%2Fv2%2Fpremises%2F%7BpremiseNumber%7D%2Fverify.xml

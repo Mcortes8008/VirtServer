@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-premisedetails-e/v2/premises/{premiseNumber}" method="GET" resourcePath="/web-premisedetails-e/v2/premises/{premiseNumber}" id="f3575291-2b1e-450d-95c8-a2cf5d8ea3d3" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f3575291-2b1e-450d-95c8-a2cf5d8ea3d3fileName">%2Fweb-premisedetails-e%2Fv2%2Fpremises%2F%7BpremiseNumber%7D</con:setting>
+  </con:settings>
+  <con:defaultResponse>Response 200</con:defaultResponse>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig xsi:type="con:MockOperationQueryMatchDispatch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="Response 200" id="4b0f9d72-3155-469c-aa92-ff88e5468485" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+if (mapParams ['delay']) {
+    for ( String values : qps ) {
+        if ( values.contains ("delay=") ) {
+            def delay = (values.split("=") [1] as int ) 
+                log.info ('delay') 
+                sleep (delay)
+        }
+    }
+} else {
+    int time = 200
+    log.info ('NoDelay')
+sleep (time)
+}</con:script>
+    <con:responseContent><![CDATA[{
+  "success": true,
+  "apiName": "web-premisedetails-e",
+  "timestamp": "2022-06-15T18:28:59.055Z",
+  "version": "2.0.3",
+  "correlationId": "053b1820-ecd9-11ec-8e87-0a64b33d16b7",
+  "data": {
+    "PremiseInfo": {
+      "premiseNumber": ${premiseNumber}
+    },
+    "PremiseDetails": {
+      "countyCode": "059",
+      "countyDesc": "Cape Girardeau",
+      "drivingDirections": "",
+      "premiseStatusCode": "02",
+      "premiseStatusDescription": "Active",
+      "premiseTypeCode": "02",
+      "premiseTypeDescription": "Apartment",
+      "taxingAreaCode": "0722",
+      "taxingAreaDescription": "Cape Gir-Cape Gir Co",
+      "weatherGroupCode": "05",
+      "weatherGroupDescription": "Cape Girardeau",
+      "premiseRevenueClass": "Residential",
+      "PremiseAddress": {
+        "addressID": ${premiseNumber},
+        "addressTypeCode": "P",
+        "addressTypeDescription": "Premise",
+        "isReadOnly": "N",
+        "addressLine1": "5856752 NOTASTREET LN",
+        "addressLine2": "",
+        "addressLine3": "",
+        "city": "CLASH CITY",
+        "state": "MO",
+        "postalCode": "11111",
+        "country": "USA"
+      },
+      "ServicePoint": [
+        {
+          "ServicePointInfo": {
+            "servicePointNumber": 44720014
+          },
+          "ServicePointDetails": {
+            "billAccountNumber": 9577415481,
+            "dateRateEffective": "2020-01-10",
+            "dateRateEffectiveSupply": "0001-01-01",
+            "energyTypeDescription": "Electric",
+            "rateCode": "327",
+            "rateDescription": "Rate 1M Res-Basic Elec Svc - Space Heat",
+            "rateShortDescription": "1M SH",
+            "servicePointStatusCode": "02",
+            "servicePointStatusDescription": "Active",
+            "serviceTypeCode": "0200",
+            "serviceTypeDescription": "Electric",
+            "supplyRateCode": "",
+            "supplyRateDescription": "",
+            "reportLinkUsages": "/sys/support/v2/reports/usages/billAccount/9577415481/servicePoint/44720014/fileName/Usages_Report_9577415481_2022-06-15?rateCode=327&serviceCode=0200&companyCode=17&amrnenv=PERF",
+            "reportLinkCharges": "/sys/support/v2/reports/charges/billAccount/9577415481/servicePoint/44720014/fileName/Charges_Report_9577415481_2022-06-15?rateCode=327&serviceCode=0200&companyCode=17&amrnenv=PERF",
+            "Meters": [
+              {
+                "meterInfo": {
+                  "meterPointNumber": 1
+                },
+                "meterDetails": {
+                  "companyTransformer": "Yes",
+                  "deliveryVoltage": "0-600v-Secondary",
+                  "effectiveDate": "2010-01-12",
+                  "equipmentSizeCode": "M38",
+                  "equipmentSizeDescription": "2S 200",
+                  "equipmentType": "",
+                  "flatAdjustment": 0,
+                  "gasMeterPressure": null,
+                  "isAMI": false,
+                  "isAMR": true,
+                  "isLegacy": false,
+                  "isNonStandard": false,
+                  "isTheMeterOutside": false,
+                  "locationID": "16004684107",
+                  "maopQuantity": 0,
+                  "manufacturerCode": "F",
+                  "manufacturerName": "Sangamo/Itron/Schlumberger",
+                  "meteringVoltage": "0-600v-Secondary",
+                  "meterLocation": "Outside",
+                  "meterMultiplier": 1,
+                  "meterNumber": "94144767 ",
+                  "meterPhaseCode": "1",
+                  "meterPhaseDescription": "Single",
+                  "meterPointLocationCode": "0",
+                  "meterPointStatus": "Active",
+                  "meterPointStatusCode": "A",
+                  "meterPointTypeCode": "000",
+                  "meterPointTypeDescription": "000 KWH",
+                  "meterProgram": "AMR K=1",
+                  "meterRelationshipCode": "  ",
+                  "meterRelationshipDescription": "",
+                  "meterStatusCode": "O",
+                  "meterStatusDescription": "On",
+                  "modelType": "C1S 5D 3W A",
+                  "numberOfDials": 5,
+                  "percentAdjustment": 0,
+                  "periodicUseCode": " ",
+                  "periodicUseDescription": "",
+                  "readingDeviceCode": "00",
+                  "readingDeviceDescription": "Standard",
+                  "readingInstructions": "East-L14",
+                  "readingKey": 304090472,
+                  "readingMethodCode": "2",
+                  "readingMethodDescription": "AMR",
+                  "readingUseCode": "02",
+                  "readingUseDescription": "Dial",
+                  "removeCompleteDate": "9999-12-31",
+                  "serviceDropNumber": 334795238,
+                  "serviceLocation": "Unknown",
+                  "serviceLocationType": "TLM - Electric",
+                  "servicePhaseDescription": "Single Ph 120/240V 3 Wire",
+                  "serviceRegulatorLocationCode": " ",
+                  "serviceRegulatorLocationDescription": "",
+                  "setCompleteDate": "2010-01-12",
+                  "specialReadingInstruction": "",
+                  "supplyFeederVoltage": "",
+                  "transformerLossPercent": 0,
+                  "transformerLossFlat": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ServicePointInfo": {
+            "servicePointNumber": 64720013
+          },
+          "ServicePointDetails": {
+            "billAccountNumber": 9577415481,
+            "dateRateEffective": "2013-10-08",
+            "dateRateEffectiveSupply": "0001-01-01",
+            "energyTypeDescription": "Gas",
+            "rateCode": "316",
+            "rateDescription": "MO Res Gas Svc - Spc Ht - Tex East",
+            "rateShortDescription": "RS GS T",
+            "servicePointStatusCode": "02",
+            "servicePointStatusDescription": "Active",
+            "serviceTypeCode": "0100",
+            "serviceTypeDescription": "Gas",
+            "supplyRateCode": "",
+            "supplyRateDescription": "",
+            "reportLinkUsages": "/sys/support/v2/reports/usages/billAccount/9577415481/servicePoint/64720013/fileName/Usages_Report_9577415481_2022-06-15?rateCode=316&serviceCode=0100&companyCode=17&amrnenv=PERF",
+            "reportLinkCharges": "/sys/support/v2/reports/charges/billAccount/9577415481/servicePoint/64720013/fileName/Charges_Report_9577415481_2022-06-15?rateCode=316&serviceCode=0100&companyCode=17&amrnenv=PERF",
+            "Meters": [
+              {
+                "meterInfo": {
+                  "meterPointNumber": 1
+                },
+                "meterDetails": {
+                  "companyTransformer": "",
+                  "deliveryVoltage": "Gas Meter",
+                  "effectiveDate": "1998-10-28",
+                  "equipmentSizeCode": "H49",
+                  "equipmentSizeDescription": "AC250 Diaphragm",
+                  "equipmentType": "",
+                  "flatAdjustment": 0,
+                  "gasMeterPressure": 2,
+                  "isAMI": false,
+                  "isAMR": true,
+                  "isLegacy": false,
+                  "isNonStandard": false,
+                  "isTheMeterOutside": false,
+                  "locationID": "70110",
+                  "maopQuantity": 0,
+                  "manufacturerCode": "I",
+                  "manufacturerName": "American",
+                  "meteringVoltage": "Gas Meter",
+                  "meterLocation": "Outside",
+                  "meterMultiplier": 1.113,
+                  "meterNumber": "98368335 ",
+                  "meterPhaseCode": "X",
+                  "meterPhaseDescription": "N/A",
+                  "meterPointLocationCode": "0",
+                  "meterPointStatus": "Active",
+                  "meterPointStatusCode": "A",
+                  "meterPointTypeCode": "0AA",
+                  "meterPointTypeDescription": "Gas Regular-Missouri",
+                  "meterProgram": "N/A",
+                  "meterRelationshipCode": "  ",
+                  "meterRelationshipDescription": "",
+                  "meterStatusCode": "O",
+                  "meterStatusDescription": "On",
+                  "modelType": "91100 4D AMR",
+                  "numberOfDials": 4,
+                  "percentAdjustment": 0,
+                  "periodicUseCode": "A",
+                  "periodicUseDescription": "Winter Use",
+                  "readingDeviceCode": "00",
+                  "readingDeviceDescription": "Standard",
+                  "readingInstructions": "North-L22",
+                  "readingKey": 734090470,
+                  "readingMethodCode": "2",
+                  "readingMethodDescription": "AMR",
+                  "readingUseCode": "02",
+                  "readingUseDescription": "Dial",
+                  "removeCompleteDate": "9999-12-31",
+                  "serviceDropNumber": 54895237,
+                  "serviceLocation": "Unknown",
+                  "serviceLocationType": "Gas-Distribution",
+                  "servicePhaseDescription": "",
+                  "serviceRegulatorLocationCode": "N",
+                  "serviceRegulatorLocationDescription": "N/A",
+                  "setCompleteDate": "1998-10-28",
+                  "specialReadingInstruction": "",
+                  "supplyFeederVoltage": "",
+                  "transformerLossPercent": 0,
+                  "transformerLossFlat": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}]]></con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Wed, 15 Jun 2022 18:28:59 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>
