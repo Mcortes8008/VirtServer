@@ -38,6 +38,14 @@
 // pw.close()
 // fos.close()</con:script>
   </con:eventHandlers>
+  <con:virtServer>
+    <con:name>PLZNTPVTAEXC3</con:name>
+    <con:url>https://plzntpvtaexc3:9090/virtserver#/</con:url>
+  </con:virtServer>
+  <con:virtServer>
+    <con:name>PLZNTPVTAEXC3</con:name>
+    <con:url>https://plzntpvtaexc3:9090</con:url>
+  </con:virtServer>
   <con:authRepository/>
   <con:tags/>
 </con:soapui-project>

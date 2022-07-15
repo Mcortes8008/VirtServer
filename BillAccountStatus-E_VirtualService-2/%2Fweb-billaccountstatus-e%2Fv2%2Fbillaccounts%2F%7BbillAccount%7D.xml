@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-billaccountstatus-e/v2/billaccounts/{billAccount}" method="GET" resourcePath="/web-billaccountstatus-e/v2/billaccounts/{billAccount}" id="506945eb-cb1b-40b3-8458-1f6e0a586e9b" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="506945eb-cb1b-40b3-8458-1f6e0a586e9bfileName">%2Fweb-billaccountstatus-e%2Fv2%2Fbillaccounts%2F%7BbillAccount%7D</con:setting>
+  </con:settings>
+  <con:defaultResponse>For includeSpeedpay=true&amp;paymentHistoryMaxDays=30&amp;includepags=true</con:defaultResponse>
+  <con:dispatchStyle>PARAMETER</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer>
+    <con:ParameterDispatcherRule>
+      <con:ruleName>includeSpeedpay=true&amp;paymentHistoryMaxDays=30&amp;includepags=true</con:ruleName>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EXISTS</con:parameterOperationType>
+        <con:parameterName>includeSpeedpay</con:parameterName>
+        <con:parameterValue>true</con:parameterValue>
+      </con:parameterDispatcherCondition>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EXISTS</con:parameterOperationType>
+        <con:parameterName>includepags</con:parameterName>
+        <con:parameterValue>true</con:parameterValue>
+      </con:parameterDispatcherCondition>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EXISTS</con:parameterOperationType>
+        <con:parameterName>paymentHistoryMaxDays</con:parameterName>
+        <con:parameterValue>30</con:parameterValue>
+      </con:parameterDispatcherCondition>
+      <con:responseName>For includeSpeedpay=true&amp;paymentHistoryMaxDays=30&amp;includepags=true</con:responseName>
+    </con:ParameterDispatcherRule>
+  </con:parameterDispatcherRuleContainer>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="For includeSpeedpay=true&amp;paymentHistoryMaxDays=30&amp;includepags=true" id="37491171-9438-4f8b-a88b-f74d8aa9c764" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+if (mapParams ['delay']) {
+    for ( String values : qps ) {
+        if ( values.contains ("delay=") ) {
+            def delay = (values.split("=") [1] as int ) 
+                log.info ('delay') 
+                sleep (delay)
+        }
+    }
+} else {
+    int time = 200
+    log.info ('NoDelay')
+sleep (time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": "web-billaccountstatus-e",
+  "timestamp": "2022-06-14T15:54:36.575Z",
+  "version": "2.0.0",
+  "correlationId": "499cffe0-ebfa-11ec-aabe-12a7eb9f34ad",
+  "data": {
+    "eftAccountResponse": {
+      "statusCode": 0,
+      "statusDesc": "Success",
+      "statusMessage": "",
+      "message": {
+        "eftStatus": "None"
+      }
+    },
+    "collectionInfoResponse": {
+      "statusCode": 0,
+      "statusDesc": "Success",
+      "statusMessage": "",
+      "message": {
+        "bankruptcyCode": "    ",
+        "minPayOneAmount": 0,
+        "reconnectAmountFee": 0,
+        "collectionDescription": "Not in Collections",
+        "collectionStatusCode": "XXX",
+        "reConnectAmount": 0
+      }
+    },
+    "billingHistoryResponse": {
+      "statusCode": 0,
+      "statusDesc": "Success",
+      "statusMessage": "",
+      "message": [
+        {
+          "billAmount": 327.18,
+          "billDate": "2021-02-25"
+        },
+        {
+          "billAmount": 128,
+          "billDate": "2021-03-24"
+        },
+        {
+          "billAmount": 127,
+          "billDate": "2021-04-22"
+        },
+        {
+          "billAmount": 128,
+          "billDate": "2021-05-21"
+        },
+        {
+          "billAmount": 128,
+          "billDate": "2021-06-22"
+        },
+        {
+          "billAmount": 134,
+          "billDate": "2021-07-22"
+        },
+        {
+          "billAmount": 262,
+          "billDate": "2021-08-20"
+        },
+        {
+          "billAmount": 135,
+          "billDate": "2021-09-21"
+        },
+        {
+          "billAmount": 257,
+          "billDate": "2021-10-21"
+        },
+        {
+          "billAmount": 250,
+          "billDate": "2021-11-19"
+        },
+        {
+          "billAmount": 127,
+          "billDate": "2021-12-21"
+        },
+        {
+          "billAmount": 128,
+          "billDate": "2022-01-24"
+        },
+        {
+          "billAmount": -355,
+          "billDate": "2022-02-22"
+        }
+      ]
+    },
+    "paymentAgreementDetailsResponse": {
+      "statusCode": 0,
+      "statusDesc": "Success",
+      "statusMessage": "",
+      "message": {
+        "isEligibleForPaymentAgreement": true,
+        "paymentAgreementOptions": [
+          
+        ]
+      }
+    },
+    "paymentRecurringScheduleDetailsResponse": {
+      "statusCode": 0,
+      "statusDesc": "Success",
+      "statusMessage": "",
+      "message": {
+        "enrollStatus": "UNENROLLED"
+      }
+    },
+    "paymentHistoryResponse": {
+      "statusCode": 0,
+      "statusDesc": null,
+      "statusMessage": "",
+      "message": [
+        {
+          "BillAccountNumber": ${billAccount},
+          "PaymentAccountNumber": "1111",
+          "PaymentAmount": 1,
+          "PaymentID": 42265040,
+          "PaymentTypeEnum": "ACH",
+          "ScheduledPaymentDate": "2018-08-30T00:00:00",
+          "RoutingNumber": "081000210",
+          "BankAccountTypeEnum": "CHECKING",
+          "IsProcessed": true,
+          "IsResidential": true,
+          "SaveBankingInfo": false
+        }
+      ]
+    }
+  }
+}</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Tue, 14 Jun 2022 15:54:36 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>
