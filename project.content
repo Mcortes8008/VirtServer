@@ -23,3 +23,5 @@ web-outage-e-2\%2Fweb-outage-e%2Fv2%2Fbillaccounts%2F%7BbillAccounts%7D%2Fpowero
 web-outage-e-2\%2Fweb-outage-e%2Fv2%2Fhouses%2F%7BhouseNumber%7D%2Fphone%2Fpoweroutage.xml
 web-outage-e-2\%2Fweb-outage-e%2Fv2%2Fbillaccounts%2F%7BbillAccount%7D%2Fpoweroutage.xml
 web-outage-e-2\%2Fweb-outage-e%2Fv2%2Fhouses%2F%7BhouseNumber%7D%2Fphone%2Fpoweroutage1.xml
+Web-Payment-Virtual-Service-2\%2Fweb-payment-e%2Fv2%2Fbillaccounts%2F%7BbillAccount%7D%2Fpayments%2Fhistory.xml
+Web-Payment-Virtual-Service-2\%2Fweb-payment-e%2Fv2%2Fpayment.xml

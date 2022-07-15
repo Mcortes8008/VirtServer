@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-payment-e/v2/billaccounts/{billAccount}/payments/history" method="GET" resourcePath="/web-payment-e/v2/billaccounts/{billAccount}/payments/history" id="19ae447b-c932-417d-9644-848913d69183" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="19ae447b-c932-417d-9644-848913d69183fileName">%2Fweb-payment-e%2Fv2%2Fbillaccounts%2F%7BbillAccount%7D%2Fpayments%2Fhistory</con:setting>
+  </con:settings>
+  <con:defaultResponse>For amrnenv=</con:defaultResponse>
+  <con:dispatchStyle>PARAMETER</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer>
+    <con:ParameterDispatcherRule>
+      <con:ruleName>amrnenv=</con:ruleName>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EXISTS</con:parameterOperationType>
+        <con:parameterName>amrnenv</con:parameterName>
+        <con:parameterValue/>
+      </con:parameterDispatcherCondition>
+      <con:responseName>For amrnenv=</con:responseName>
+    </con:ParameterDispatcherRule>
+  </con:parameterDispatcherRuleContainer>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="For amrnenv=" id="92be6670-25de-4de7-9bde-49dc10ff2bdd" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+
+
+if (mapParams ['delay']) {
+for ( String values : qps ) {
+if ( values.contains ("delay=") ) {
+def delay = (values.split("=") [1] as int )
+log.info ('delay')
+sleep (delay)
+}
+}
+} else {
+int time = 200
+log.info ('NoDelay')
+sleep (time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": "web-payment-exp",
+  "timestamp": "2022-07-11T23:24:46.412Z",
+  "version": "1.0.1",
+  "correlationId": "a657f2e0-0170-11ed-95e1-166d60fe48a9",
+  "data": [
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "5223",
+      "paymentAmount": 35.0800,
+      "paymentID": 35999892,
+      "paymentType": "CC",
+      "scheduledPaymentDate": "2017-06-01T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "5502",
+      "paymentAmount": 113.0000,
+      "paymentID": 37609082,
+      "paymentType": "CC",
+      "scheduledPaymentDate": "2017-08-23T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "2762",
+      "paymentAmount": 82.0000,
+      "paymentID": 38331123,
+      "paymentType": "CC",
+      "scheduledPaymentDate": "2017-09-27T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "0028",
+      "paymentAmount": 203.0000,
+      "paymentID": 38771588,
+      "paymentType": "CC",
+      "scheduledPaymentDate": "2017-10-17T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "1330",
+      "paymentAmount": 146.2300,
+      "paymentID": 39523750,
+      "paymentType": "CC",
+      "scheduledPaymentDate": "2017-11-25T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "6766",
+      "paymentAmount": 166.0000,
+      "paymentID": 40066707,
+      "paymentType": "CC",
+      "scheduledPaymentDate": "2017-12-27T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "7957",
+      "paymentAmount": 94.0000,
+      "paymentID": 40513531,
+      "paymentType": "CC",
+      "scheduledPaymentDate": "2018-01-19T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "2629",
+      "paymentAmount": 318.9900,
+      "paymentID": 41413058,
+      "paymentType": "CC",
+      "scheduledPaymentDate": "2018-03-05T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "8884",
+      "paymentAmount": 290.9900,
+      "paymentID": 41961239,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2018-04-02T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "1122",
+      "paymentAmount": 291.6700,
+      "paymentID": 42799005,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2018-05-11T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "1122",
+      "paymentAmount": 219.4200,
+      "paymentID": 43436477,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2018-06-11T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "7311",
+      "paymentAmount": 276.8600,
+      "paymentID": 44030817,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2018-07-10T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "7311",
+      "paymentAmount": 311.7200,
+      "paymentID": 44648382,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2018-08-06T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "0001",
+      "paymentAmount": 270.0000,
+      "paymentID": 45845192,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2018-09-28T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "7311",
+      "paymentAmount": 263.0000,
+      "paymentID": 46526373,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2018-10-26T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "1122",
+      "paymentAmount": 221.0000,
+      "paymentID": 47101459,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2018-11-23T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "7311",
+      "paymentAmount": 60.0000,
+      "paymentID": 47761346,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2018-12-27T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "7311",
+      "paymentAmount": 206.1300,
+      "paymentID": 48652195,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2019-02-07T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "1122",
+      "paymentAmount": 200.0000,
+      "paymentID": 49120495,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2019-03-01T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "1122",
+      "paymentAmount": 310.0000,
+      "paymentID": 49813706,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2019-03-29T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "0066",
+      "paymentAmount": 260.2100,
+      "paymentID": 50462834,
+      "paymentType": "ATM",
+      "scheduledPaymentDate": "2019-04-26T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "2344",
+      "paymentAmount": 677.1500,
+      "paymentID": 50706003,
+      "paymentType": "ACH",
+      "scheduledPaymentDate": "2020-03-12T00:00:00",
+      "routingNumber": "081000032",
+      "bankAccountType": "CHECKING",
+      "isProcessed": false,
+      "isResidential": true,
+      "saveBankingInfo": true,
+      "emailAddress": "BEQUETTE@YHTI.NET"
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "8007",
+      "paymentAmount": 1101.7900,
+      "paymentID": 50706215,
+      "paymentType": "ACH",
+      "scheduledPaymentDate": "2020-03-30T00:00:00",
+      "routingNumber": "272479388",
+      "bankAccountType": "CHECKING",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": "DEV@AMEREN.COM"
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "8007",
+      "paymentAmount": 1101.7900,
+      "paymentID": 50706213,
+      "paymentType": "ACH",
+      "scheduledPaymentDate": "2020-03-30T00:00:00",
+      "routingNumber": "272479388",
+      "bankAccountType": "CHECKING",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": "DEV@AMEREN.COM"
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "8007",
+      "paymentAmount": 1101.7900,
+      "paymentID": 50706211,
+      "paymentType": "ACH",
+      "scheduledPaymentDate": "2020-03-30T00:00:00",
+      "routingNumber": "272479388",
+      "bankAccountType": "CHECKING",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": "DEV@AMEREN.COM"
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "4006",
+      "paymentAmount": 1101.7900,
+      "paymentID": 50706210,
+      "paymentType": "CC",
+      "scheduledPaymentDate": "2020-03-30T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "8007",
+      "paymentAmount": 1101.7900,
+      "paymentID": 50706207,
+      "paymentType": "ACH",
+      "scheduledPaymentDate": "2020-03-30T00:00:00",
+      "routingNumber": "272479388",
+      "bankAccountType": "CHECKING",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": "DEV@AMEREN.COM"
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "8007",
+      "paymentAmount": 1101.7900,
+      "paymentID": 50706198,
+      "paymentType": "ACH",
+      "scheduledPaymentDate": "2020-03-30T00:00:00",
+      "routingNumber": "272479388",
+      "bankAccountType": "CHECKING",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": "DEV@AMEREN.COM"
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "8007",
+      "paymentAmount": 1101.7900,
+      "paymentID": 50706172,
+      "paymentType": "ACH",
+      "scheduledPaymentDate": "2020-03-30T00:00:00",
+      "routingNumber": "272479388",
+      "bankAccountType": "CHECKING",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": "DEV@AMEREN.COM"
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "8007",
+      "paymentAmount": 1101.7900,
+      "paymentID": 50706170,
+      "paymentType": "ACH",
+      "scheduledPaymentDate": "2020-03-30T00:00:00",
+      "routingNumber": "272479388",
+      "bankAccountType": "CHECKING",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": "DEV@AMEREN.COM"
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "8007",
+      "paymentAmount": 1101.7900,
+      "paymentID": 50706168,
+      "paymentType": "ACH",
+      "scheduledPaymentDate": "2020-03-30T00:00:00",
+      "routingNumber": "272479388",
+      "bankAccountType": "CHECKING",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": "DEV@AMEREN.COM"
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "7596",
+      "paymentAmount": 1101.7900,
+      "paymentID": 50706162,
+      "paymentType": "ACH",
+      "scheduledPaymentDate": "2020-03-30T00:00:00",
+      "routingNumber": "021000021",
+      "bankAccountType": "CHECKING",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": "DEV@AMEREN.COM"
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "4006",
+      "paymentAmount": 1101.7900,
+      "paymentID": 50706160,
+      "paymentType": "CC",
+      "scheduledPaymentDate": "2020-03-30T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "3738",
+      "paymentAmount": 1101.7900,
+      "paymentID": 50738836,
+      "paymentType": "CC",
+      "scheduledPaymentDate": "2020-04-27T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "1118",
+      "paymentAmount": 8.0000,
+      "paymentID": 50742060,
+      "paymentType": "CC",
+      "scheduledPaymentDate": "2020-07-30T00:00:00",
+      "routingNumber": "CCCCCCCCC",
+      "bankAccountType": "CARD",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "7890",
+      "paymentAmount": 75.0000,
+      "paymentID": 50742084,
+      "paymentType": "ACH",
+      "scheduledPaymentDate": "2020-07-31T00:00:00",
+      "routingNumber": "211391825",
+      "bankAccountType": "CHECKING",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": true,
+      "emailAddress": "ECUSTOMERDEV@AMEREN.COM"
+    },
+    {
+      "billAccountNumber":${billAccount},
+      "paymentAccountNumber": "2344",
+      "paymentAmount": 22.2200,
+      "paymentID": 50742375,
+      "paymentType": "ACH",
+      "scheduledPaymentDate": "2020-09-04T00:00:00",
+      "routingNumber": "081000032",
+      "bankAccountType": "CHECKING",
+      "isProcessed": true,
+      "isResidential": true,
+      "saveBankingInfo": false,
+      "emailAddress": null
+    }
+  ]
+}</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Mon, 11 Jul 2022 23:24:46 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>

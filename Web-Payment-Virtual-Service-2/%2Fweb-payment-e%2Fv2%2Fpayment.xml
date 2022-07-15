@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-payment-e/v2/payment" method="POST" resourcePath="/web-payment-e/v2/payment" id="87f74ff2-2145-46c0-ad3d-5a03c9cc4f16" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="87f74ff2-2145-46c0-ad3d-5a03c9cc4f16fileName">%2Fweb-payment-e%2Fv2%2Fpayment</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="Response 2" id="71248569-8ac7-41b7-b3de-ed5717aa6602" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+
+
+if (mapParams ['delay']) {
+for ( String values : qps ) {
+if ( values.contains ("delay=") ) {
+def delay = (values.split("=") [1] as int )
+log.info ('delay')
+sleep (delay)
+}
+}
+} else {
+int time = 200
+log.info ('NoDelay')
+sleep (time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": "web-payment-exp",
+  "timestamp": "2022-07-11T23:25:14.377Z",
+  "version": "1.0.1",
+  "correlationId": "b70386e0-0170-11ed-95e1-166d60fe48a9",
+  "data": {
+    "paymentId": "37260633",
+    "bankName": "Bank of America, National Association",
+    "customResultInformation": ""
+  }
+}</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Mon, 11 Jul 2022 23:25:14 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>
