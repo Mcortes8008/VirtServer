@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-preference-e/v2/billaccounts/{preferenceNumber}/preferences" method="GET" resourcePath="/web-preference-e/v2/billaccounts/{preferenceNumber}/preferences" id="92f595c9-c053-48dc-b17b-ea61f8e0fa72" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="92f595c9-c053-48dc-b17b-ea61f8e0fa72fileName">%2Fweb-preference-e%2Fv2%2Fbillaccounts%2F%7BpreferenceNumber%7D%2Fpreferences</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="Response 1" id="fbc3c165-8a02-4218-96e1-a709cf6f7d5c" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+
+
+if (mapParams ['delay']) {
+for ( String values : qps ) {
+if ( values.contains ("delay=") ) {
+def delay = (values.split("=") [1] as int )
+log.info ('delay')
+sleep (delay)
+}
+}
+} else {
+int time = 200
+log.info ('NoDelay')
+sleep (time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": "web-preference-e",
+  "timestamp": "2022-06-16T20:23:48.062Z",
+  "version": "1.0.22-SNAPSHOT",
+  "correlationId": "39e763b0-edb2-11ec-88c5-16d972b1aabb",
+  "data": [
+    {
+      "contact": "eCustomerDev@ameren.com",
+      "cssContactId": 14337452,
+      "userEmailId": 15233703,
+      "deliveryTypeCode": 2,
+      "deliveryTypeDescription": "Email",
+      "quietHoursStart": "",
+      "quietHoursEnd": "",
+      "isOutageQuietHoursIgnored": false,
+      "isPrimary": false,
+      "alerts": [
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 1,
+          "preferenceGroupDescription": "Paperless Billing",
+          "preferenceSubGroupCode": 1,
+          "preferenceSubGroupDescription": "Paperless Billing",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 2,
+          "preferenceSubGroupDescription": "Bill Reminders",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 3,
+          "preferenceGroupDescription": "Outage",
+          "preferenceSubGroupCode": 3,
+          "preferenceSubGroupDescription": "Outage",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 4,
+          "preferenceSubGroupDescription": "Important Acct. Status Update",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 5,
+          "preferenceSubGroupDescription": "Payment Confirmations",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 6,
+          "preferenceSubGroupDescription": "Budget Billing",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 7,
+          "preferenceSubGroupDescription": "Energy Assistance Pledge",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 8,
+          "preferenceSubGroupDescription": "Weekly Cost Summary",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 9,
+          "preferenceSubGroupDescription": "Cost Threshold",
+          "preferenceQuantity": 25
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 10,
+          "preferenceSubGroupDescription": "Gas Usage Threshold",
+          "preferenceQuantity": 10
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 11,
+          "preferenceSubGroupDescription": "Electric Usage Threshold",
+          "preferenceQuantity": 350
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 9,
+          "preferenceGroupDescription": "Service Order",
+          "preferenceSubGroupCode": 14,
+          "preferenceSubGroupDescription": "Start and Stop Service",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 12,
+          "preferenceGroupDescription": "Peak Time Rewards",
+          "preferenceSubGroupCode": 16,
+          "preferenceSubGroupDescription": "Peak Time Rewards",
+          "preferenceQuantity": 0
+        }
+      ]
+    },
+    {
+      "contact": "eCustomerDev@ameren.com",
+      "cssContactId": 5671764,
+      "userEmailId": 7162763,
+      "deliveryTypeCode": 2,
+      "deliveryTypeDescription": "Email",
+      "quietHoursStart": "",
+      "quietHoursEnd": "",
+      "isOutageQuietHoursIgnored": false,
+      "isPrimary": false,
+      "alerts": [
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 1,
+          "preferenceGroupDescription": "Paperless Billing",
+          "preferenceSubGroupCode": 1,
+          "preferenceSubGroupDescription": "Paperless Billing",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 2,
+          "preferenceSubGroupDescription": "Bill Reminders",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 3,
+          "preferenceGroupDescription": "Outage",
+          "preferenceSubGroupCode": 3,
+          "preferenceSubGroupDescription": "Outage",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 4,
+          "preferenceSubGroupDescription": "Important Acct. Status Update",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 5,
+          "preferenceSubGroupDescription": "Payment Confirmations",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 6,
+          "preferenceSubGroupDescription": "Budget Billing",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 7,
+          "preferenceSubGroupDescription": "Energy Assistance Pledge",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 8,
+          "preferenceSubGroupDescription": "Weekly Cost Summary",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 9,
+          "preferenceSubGroupDescription": "Cost Threshold",
+          "preferenceQuantity": 25
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 10,
+          "preferenceSubGroupDescription": "Gas Usage Threshold",
+          "preferenceQuantity": 10
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 11,
+          "preferenceSubGroupDescription": "Electric Usage Threshold",
+          "preferenceQuantity": 350
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 9,
+          "preferenceGroupDescription": "Service Order",
+          "preferenceSubGroupCode": 14,
+          "preferenceSubGroupDescription": "Start and Stop Service",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 12,
+          "preferenceGroupDescription": "Peak Time Rewards",
+          "preferenceSubGroupCode": 16,
+          "preferenceSubGroupDescription": "Peak Time Rewards",
+          "preferenceQuantity": 0
+        }
+      ]
+    },
+    {
+      "contact": "6374102871",
+      "cssContactId": 57081946,
+      "deliveryTypeCode": 1,
+      "deliveryTypeDescription": "Text",
+      "quietHoursStart": "22:00",
+      "quietHoursEnd": "07:00",
+      "isOutageQuietHoursIgnored": true,
+      "isPrimary": true,
+      "alerts": [
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 1,
+          "preferenceGroupDescription": "Paperless Billing",
+          "preferenceSubGroupCode": 1,
+          "preferenceSubGroupDescription": "Paperless Billing",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 2,
+          "preferenceSubGroupDescription": "Bill Reminders",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 3,
+          "preferenceGroupDescription": "Outage",
+          "preferenceSubGroupCode": 3,
+          "preferenceSubGroupDescription": "Outage",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 4,
+          "preferenceSubGroupDescription": "Important Acct. Status Update",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 5,
+          "preferenceSubGroupDescription": "Payment Confirmations",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 6,
+          "preferenceSubGroupDescription": "Budget Billing",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 7,
+          "preferenceSubGroupDescription": "Energy Assistance Pledge",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 8,
+          "preferenceSubGroupDescription": "Weekly Cost Summary",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 9,
+          "preferenceSubGroupDescription": "Cost Threshold",
+          "preferenceQuantity": 25
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 10,
+          "preferenceSubGroupDescription": "Gas Usage Threshold",
+          "preferenceQuantity": 10
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 11,
+          "preferenceSubGroupDescription": "Electric Usage Threshold",
+          "preferenceQuantity": 350
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 9,
+          "preferenceGroupDescription": "Service Order",
+          "preferenceSubGroupCode": 14,
+          "preferenceSubGroupDescription": "Start and Stop Service",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 12,
+          "preferenceGroupDescription": "Peak Time Rewards",
+          "preferenceSubGroupCode": 16,
+          "preferenceSubGroupDescription": "Peak Time Rewards",
+          "preferenceQuantity": 0
+        }
+      ]
+    },
+    {
+      "contact": "6374102871",
+      "cssContactId": 57081946,
+      "deliveryTypeCode": 3,
+      "deliveryTypeDescription": "Voice",
+      "quietHoursStart": "22:00",
+      "quietHoursEnd": "07:00",
+      "isOutageQuietHoursIgnored": true,
+      "isPrimary": true,
+      "alerts": [
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 1,
+          "preferenceGroupDescription": "Paperless Billing",
+          "preferenceSubGroupCode": 1,
+          "preferenceSubGroupDescription": "Paperless Billing",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 2,
+          "preferenceSubGroupDescription": "Bill Reminders",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 3,
+          "preferenceGroupDescription": "Outage",
+          "preferenceSubGroupCode": 3,
+          "preferenceSubGroupDescription": "Outage",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 4,
+          "preferenceSubGroupDescription": "Important Acct. Status Update",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 5,
+          "preferenceSubGroupDescription": "Payment Confirmations",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 6,
+          "preferenceSubGroupDescription": "Budget Billing",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 2,
+          "preferenceGroupDescription": "Billing and Payment",
+          "preferenceSubGroupCode": 7,
+          "preferenceSubGroupDescription": "Energy Assistance Pledge",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 8,
+          "preferenceSubGroupDescription": "Weekly Cost Summary",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 9,
+          "preferenceSubGroupDescription": "Cost Threshold",
+          "preferenceQuantity": 25
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 10,
+          "preferenceSubGroupDescription": "Gas Usage Threshold",
+          "preferenceQuantity": 10
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 4,
+          "preferenceGroupDescription": "Energy Usage",
+          "preferenceSubGroupCode": 11,
+          "preferenceSubGroupDescription": "Electric Usage Threshold",
+          "preferenceQuantity": 350
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 9,
+          "preferenceGroupDescription": "Service Order",
+          "preferenceSubGroupCode": 14,
+          "preferenceSubGroupDescription": "Start and Stop Service",
+          "preferenceQuantity": 0
+        },
+        {
+          "alertStatusCode": 1,
+          "alertStatusDescription": "Inactive",
+          "preferenceGroupCode": 12,
+          "preferenceGroupDescription": "Peak Time Rewards",
+          "preferenceSubGroupCode": 16,
+          "preferenceSubGroupDescription": "Peak Time Rewards",
+          "preferenceQuantity": 0
+        }
+      ]
+    }
+  ]
+}http://localhost:8099/</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Thu, 16 Jun 2022 20:23:48 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>

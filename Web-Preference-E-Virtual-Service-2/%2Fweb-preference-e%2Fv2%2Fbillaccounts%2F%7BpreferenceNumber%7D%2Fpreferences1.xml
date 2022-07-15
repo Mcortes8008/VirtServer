@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-preference-e/v2/billaccounts/{preferenceNumber}/preferences" method="PUT" resourcePath="/web-preference-e/v2/billaccounts/{preferenceNumber}/preferences" id="c22335d2-db6f-4b2f-8dd8-2bd5863a0c14" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c22335d2-db6f-4b2f-8dd8-2bd5863a0c14fileName">%2Fweb-preference-e%2Fv2%2Fbillaccounts%2F%7BpreferenceNumber%7D%2Fpreferences1</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="Response 1" id="30161209-8e24-483e-ba46-af857bd69e8e" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+
+
+if (mapParams ['delay']) {
+for ( String values : qps ) {
+if ( values.contains ("delay=") ) {
+def delay = (values.split("=") [1] as int )
+log.info ('delay')
+sleep (delay)
+}
+}
+} else {
+int time = 200
+log.info ('NoDelay')
+sleep (time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": "web-preference-e",
+  "timestamp": "2022-06-16T20:23:51.85Z",
+  "version": "1.0.22-SNAPSHOT",
+  "correlationId": "3c8e40c0-edb2-11ec-88c5-16d972b1aabb",
+  "data": [
+    
+  ]
+}</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Thu, 16 Jun 2022 20:23:51 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>
