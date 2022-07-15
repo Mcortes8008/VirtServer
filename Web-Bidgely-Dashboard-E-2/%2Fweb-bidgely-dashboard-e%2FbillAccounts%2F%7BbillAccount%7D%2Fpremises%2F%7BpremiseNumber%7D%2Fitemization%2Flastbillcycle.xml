@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-bidgely-dashboard-e/billAccounts/{billAccount}/premises/{premiseNumber}/itemization/lastbillcycle" method="GET" resourcePath="/web-bidgely-dashboard-e/billAccounts/{billAccount}/premises/{premiseNumber}/itemization/lastbillcycle" id="ad4be945-e0c9-4977-ae68-8047af4b5a95" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ad4be945-e0c9-4977-ae68-8047af4b5a95fileName">%2Fweb-bidgely-dashboard-e%2FbillAccounts%2F%7BbillAccount%7D%2Fpremises%2F%7BpremiseNumber%7D%2Fitemization%2Flastbillcycle</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="Response 1" id="d4ba4cb2-7211-47a5-b305-b5748daa857e" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode(it)}}  
+if (mapParams['delay']){
+    for( String values : qps ) {
+        if ( values.contains("delay=") ) {
+            def delay = (values.split("=")[1]as int)
+            sleep(delay)
+        }
+    }
+} else {
+    int time = 200
+    sleep(time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": "web-bidgely-dashboard-e",
+  "timestamp": "2022-06-17T19:54:32.423Z",
+  "version": "1.0.3",
+  "correlationId": "4dd90570-ee77-11ec-b4dc-1660180f2cbb",
+  "data": {
+    "billStartDate": "2021-01-05",
+    "billEndDate": "2021-02-03",
+    "electricDetails": [
+      {
+        "units": "kWh",
+        "category": "waterHeating",
+        "consumption": 90,
+        "cost": 7
+      },
+      {
+        "units": "kWh",
+        "category": "alwaysOn",
+        "consumption": 56,
+        "cost": 5
+      },
+      {
+        "units": "kWh",
+        "category": "laundry",
+        "consumption": 47,
+        "cost": 4
+      },
+      {
+        "units": "kWh",
+        "category": "lighting",
+        "consumption": 37,
+        "cost": 3
+      },
+      {
+        "units": "kWh",
+        "category": "refrigeration",
+        "consumption": 30,
+        "cost": 2
+      },
+      {
+        "units": "kWh",
+        "category": "cooking",
+        "consumption": 27,
+        "cost": 2
+      },
+      {
+        "units": "kWh",
+        "category": "entertainment",
+        "consumption": 16,
+        "cost": 1
+      },
+      {
+        "units": "kWh",
+        "category": "total",
+        "consumption": 303,
+        "cost": 24.4
+      }
+    ]
+  }
+}</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Fri, 17 Jun 2022 19:54:32 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>

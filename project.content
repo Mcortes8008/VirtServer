@@ -16,3 +16,6 @@ BillAccountStatus-E_VirtualService-2\%2Fweb-billaccountstatus-e%2Fv2%2Fbillaccou
 Web-Billing-E-Virtual-Service-2\%2Fweb-billing-e%2Fv2%2Fbillaccounts%2F%7BbillAccount%7D%2Fcollectioninfo.xml
 Web-Preference-E-Virtual-Service-2\%2Fweb-preference-e%2Fv2%2Fbillaccounts%2F%7BpreferenceNumber%7D%2Fpreferences.xml
 Web-Preference-E-Virtual-Service-2\%2Fweb-preference-e%2Fv2%2Fbillaccounts%2F%7BpreferenceNumber%7D%2Fpreferences1.xml
+Web-Bidgely-Dashboard-E-2\%2Fweb-bidgely-dashboard-e%2FbillAccounts%2F%7BbillAccount%7D%2Fpremises%2F%7BpremiseNumber%7D%2Fcurrentbillcycledetails.xml
+Web-Bidgely-Dashboard-E-2\%2Fweb-bidgely-dashboard-e%2FbillAccounts%2F%7BbillAccount%7D%2Fpremises%2F%7BpremiseNumber%7D%2Fusagedetails%2Flastbillcycle.xml
+Web-Bidgely-Dashboard-E-2\%2Fweb-bidgely-dashboard-e%2FbillAccounts%2F%7BbillAccount%7D%2Fpremises%2F%7BpremiseNumber%7D%2Fitemization%2Flastbillcycle.xml
