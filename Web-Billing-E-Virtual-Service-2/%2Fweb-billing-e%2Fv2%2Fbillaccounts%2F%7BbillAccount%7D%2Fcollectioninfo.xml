@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-billing-e/v2/billaccounts/{billAccount}/collectioninfo" method="GET" resourcePath="/web-billing-e/v2/billaccounts/{billAccount}/collectioninfo" id="f98ef21b-1cdb-42cc-a910-8bc92a28a730" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f98ef21b-1cdb-42cc-a910-8bc92a28a730fileName">%2Fweb-billing-e%2Fv2%2Fbillaccounts%2F%7BbillAccount%7D%2Fcollectioninfo</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="Response 200" id="14135f80-f557-40f0-be3d-e340d95d4094" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+
+
+if (mapParams ['delay']) {
+for ( String values : qps ) {
+if ( values.contains ("delay=") ) {
+def delay = (values.split("=") [1] as int )
+log.info ('delay')
+sleep (delay)
+}
+}
+} else {
+int time = 200
+log.info ('NoDelay')
+sleep (time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": "web-billing-e",
+  "timestamp": "2022-06-15T19:59:46.474Z",
+  "version": "1.0.6-SNAPSHOT",
+  "correlationId": "b48984e0-ece5-11ec-9f7c-0a6f8ea4f7b3",
+  "data": {
+    "billAccountNumber": ${billAccount},
+    "customerNumber": 1121,
+    "collectionStatusCode": "XXX",
+    "collectionDescription": "Not in Collections",
+    "collectionStatusDate": "2022-01-25",
+    "bankruptcyCode": "    ",
+    "bankruptcyDescription": "",
+    "isSubjectToDisconnect": "N",
+    "isInCollections": "N",
+    "minPayOneAmount": 0,
+    "minPayOneDueDate": "2022-03-04",
+    "minPayOneExpDate": "2022-03-14",
+    "minPayTwoAmount": 0,
+    "minPayTwoDueDate": "2022-04-04",
+    "creditRating": "C",
+    "disconnectNoticeIssuedDate": null,
+    "numberOFDisconnectNotices": 0,
+    "nextCollectionAction": "",
+    "nextCollectionActionDate": "9999-12-31",
+    "reconnectAmount": 0,
+    "reconnectAmountFee": 0,
+    "collectionHandling": "",
+    "disconnectNoticeAmount": 0
+  }
+}</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Wed, 15 Jun 2022 19:59:46 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>
