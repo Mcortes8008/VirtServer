@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-billaccountsummary-e/v2/users/{userName}/billaccounts/info" method="GET" resourcePath="/web-billaccountsummary-e/v2/users/{userName}/billaccounts/info" id="dd29c1b2-156b-4d95-a2bb-5b1abb2d6a1f" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="dd29c1b2-156b-4d95-a2bb-5b1abb2d6a1ffileName">%2Fweb-billaccountsummary-e%2Fv2%2Fusers%2F%7BuserName%7D%2Fbillaccounts%2Finfo</con:setting>
+  </con:settings>
+  <con:defaultResponse>For maxRecords=5</con:defaultResponse>
+  <con:dispatchStyle>PARAMETER</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer>
+    <con:ParameterDispatcherRule>
+      <con:ruleName>maxRecords=5</con:ruleName>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EXISTS</con:parameterOperationType>
+        <con:parameterName>maxRecords</con:parameterName>
+        <con:parameterValue>5</con:parameterValue>
+      </con:parameterDispatcherCondition>
+      <con:responseName>For maxRecords=5</con:responseName>
+    </con:ParameterDispatcherRule>
+  </con:parameterDispatcherRuleContainer>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>false</con:saveRoutedResponse>
+  <con:response name="For maxRecords=5" id="e05eb08b-54e8-4cdd-bc9d-77220215567f" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+if (mapParams ['delay']) {
+    for ( String values : qps ) {
+        if ( values.contains ("delay=") ) {
+            def delay = (values.split("=") [1] as int ) 
+                log.info ('delay') 
+                sleep (delay)
+        }
+    }
+} else {
+    int time = 200
+    log.info ('NoDelay')
+sleep (time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": "web-billaccountsummary-e",
+  "timestamp": "2022-06-13T19:09:13.485Z",
+  "version": "1.0.14-SNAPSHOT",
+  "correlationId": "4fc38be0-eb4c-11ec-9751-16c6ea3e1ecd",
+  "data": {
+    "primaryEmailAddress": "eCustomerDev@ameren.com",
+    "emailAddressId": 14279219,
+    "emailLastModified": "2020-03-24",
+    "userId": 5800716,
+    "billAccountNumbers": [
+      {
+        "billAccountNumber": "125317129",
+        "operatingCenterCode": "BRK",
+        "accountUserType": 1,
+        "tariffTypeCode": "01",
+        "premiseNumber": "12531701",
+        "accountDescription": "PE Test",
+        "currentPaymentDueDate": "2022-03-25",
+        "currentBalance": 82,
+        "pastDueAmount": 0,
+        "isInvalidAccount": false,
+        "isPastDue": false,
+        "isWrittenOff": false,
+        "isSubToDisconnect": false,
+        "isCutOutForNonPay": false,
+        "isFinal": false,
+        "isComplete": true,
+        "isFlexPay": false,
+        "collectionStatusCode": "XXX"
+      }
+    ]
+  }
+}</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Mon, 13 Jun 2022 19:09:13 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>

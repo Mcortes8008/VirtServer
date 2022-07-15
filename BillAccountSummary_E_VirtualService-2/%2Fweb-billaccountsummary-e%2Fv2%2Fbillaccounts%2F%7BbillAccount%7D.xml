@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-billaccountsummary-e/v2/billaccounts/{billAccount}" method="GET" resourcePath="/web-billaccountsummary-e/v2/billaccounts/{billAccount}" id="ddeaa2d4-5455-49e1-8862-eeae424bf071" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ddeaa2d4-5455-49e1-8862-eeae424bf071fileName">%2Fweb-billaccountsummary-e%2Fv2%2Fbillaccounts%2F%7BbillAccount%7D</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="Response 1" id="ffac5719-723d-49cb-b548-046d539a2ba5" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+if (mapParams ['delay']) {
+    for ( String values : qps ) {
+        if ( values.contains ("delay=") ) {
+            def delay = (values.split("=") [1] as int ) 
+                log.info ('delay') 
+                sleep (delay)
+        }
+    }
+} else {
+    int time = 200
+    log.info ('NoDelay')
+sleep (time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": "web-billaccountsummary-e",
+  "timestamp": "2022-06-14T21:45:26.497Z",
+  "version": "1.0.14-SNAPSHOT",
+  "correlationId": "4cffe3b0-ec2b-11ec-b8ca-121d22b2b92f",
+  "data": {
+    "isSubOrdinate": false,
+    "isCashOnly": false,
+    "isWrittenOff": false,
+    "isPendingActive": false,
+    "billAccount": {
+      "accountNumber": ${billAccount},
+      "accountStatusCode": "02",
+      "accountTypeCode": "33",
+      "companyCode": "17",
+      "customerNumber": 959830311,
+      "customerSegmentDescription": "Autopilots",
+      "premiseNumber": 718441301,
+      "primaryPhoneID": 32319870,
+      "primaryPhone": "6368466963",
+      "phoneLastModified": "2022-01-25",
+      "summarySubordinate": "N",
+      "tariffTypeCode": "01",
+      "isFlexPay": false,
+      "isFinal": false,
+      "isFinalled": false,
+      "isResidential": true,
+      "billGroup": 8
+    },
+    "accountBalance": {
+      "balanceForward": 0,
+      "currentBalance": 82.99,
+      "currentBillDate": "2022-03-08",
+      "currentWebBillGUIDURL": "",
+      "currentPaymentDueDate": "2022-03-30",
+      "lastPaymentAmount": 97.88,
+      "lastPaymentDate": "2022-03-01",
+      "pastDueAmount": null,
+      "previousBillDate": "2022-02-07",
+      "previousPaymentDueDate": "2022-03-02",
+      "unbilledBalance": 0,
+      "totalBalance": 0
+    },
+    "pAGSummary": {
+      "isPastDue": false,
+      "pastDueAmount": 0,
+      "isFinalDPA": false,
+      "collectionMessages": [
+        
+      ]
+    },
+    "indicators": {
+      "indicatorList": [
+        {
+          "accountIndicatorFlag": "Y",
+          "accountIndicatorType": "isEnrolledInAlerts"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasPullBill"
+        },
+        {
+          "accountIndicatorFlag": "Y",
+          "accountIndicatorType": "hasAMIMeter"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasAMRMeter"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasLegacyMeter"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasNSMMeter"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasBudgetBill"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasDeposit"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasReturnItem"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "isCashOnlyRes"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "isMedicalCertificateCritical"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "isMedicalCertificateCautionary"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasPaymentAgreement"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "isDollarMore"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "Paperless"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "SuspendedCharge"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "PasswordRequired"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasLandlord"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasLandlord"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasExtension"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "isSumSub"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasPickDueDate"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "isFlexPay"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "isQualifyingFacilities"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasNetMetering"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasPayAsYouSave"
+        },
+        {
+          "accountIndicatorFlag": "Y",
+          "accountIndicatorType": "isBidgelyEligible"
+        },
+        {
+          "accountIndicatorFlag": "N",
+          "accountIndicatorType": "hasEV"
+        },
+        {
+          "accountIndicatorFlag": "Y",
+          "accountIndicatorType": "hasMinAmiData"
+        }
+      ]
+    },
+    "pendingOrders": null,
+    "address": {
+      "line1": "4710409 NOTASTREET LN",
+      "line2": null,
+      "line3": null,
+      "city": "CLASH CITY",
+      "stateOrProvince": "MO",
+      "postalCode": "11111",
+      "country": "USA"
+    },
+    "metersType": {
+      "hasAMI": true,
+      "hasAMR": false,
+      "hasOther": false,
+      "hasGasMeter": false,
+      "hasElectricMeter": true
+    }
+  }
+}</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Tue, 14 Jun 2022 21:45:26 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>

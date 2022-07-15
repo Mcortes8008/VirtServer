@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-billaccountsummary-e/v2/billaccounts/{billAccount}/paybilldetails" method="GET" resourcePath="/web-billaccountsummary-e/v2/billaccounts/{billAccount}/paybilldetails" id="81c90499-330a-4e30-9d57-60adc3c6077c" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="81c90499-330a-4e30-9d57-60adc3c6077cfileName">%2Fweb-billaccountsummary-e%2Fv2%2Fbillaccounts%2F%7BbillAccount%7D%2Fpaybilldetails</con:setting>
+  </con:settings>
+  <con:defaultResponse>For includeSpeedpay=true</con:defaultResponse>
+  <con:dispatchStyle>PARAMETER</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer>
+    <con:ParameterDispatcherRule>
+      <con:ruleName>includeSpeedpay=true</con:ruleName>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EXISTS</con:parameterOperationType>
+        <con:parameterName>includeSpeedpay</con:parameterName>
+        <con:parameterValue>true</con:parameterValue>
+      </con:parameterDispatcherCondition>
+      <con:responseName>For includeSpeedpay=true</con:responseName>
+    </con:ParameterDispatcherRule>
+  </con:parameterDispatcherRuleContainer>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>false</con:saveRoutedResponse>
+  <con:response name="For includeSpeedpay=true" id="7a45720e-534d-4973-8456-169f0b6b5682" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode (it) }}
+
+if (mapParams ['delay']) {
+    for ( String values : qps ) {
+        if ( values.contains ("delay=") ) {
+            def delay = (values.split("=") [1] as int ) 
+                log.info ('delay') 
+                sleep (delay)
+        }
+    }
+} else {
+    int time = 200
+    log.info ('NoDelay')
+sleep (time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": null,
+  "timestamp": "2022-06-13T19:09:05.762Z",
+  "version": "1.0.9-SNAPSHOT",
+  "correlationId": "4b3bb9d0-eb4c-11ec-9751-16c6ea3e1ecd",
+  "data": {
+    "cssAutoPayStatus": "PendingEnroll",
+    "CurrentBillAmount": 82.99,
+    "BankruptcyCode": "    ",
+    "reConnectAmount": 0,
+    "ccAutoPayStatus": "UNENROLLED"
+    
+  }
+}</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Mon, 13 Jun 2022 19:09:05 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>
