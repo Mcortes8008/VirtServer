@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockService port="8104" path="/" host="localhost" name="Web-Chat-E-VS 2" routeModeEnabled="false" routeEndpoint="https://qa.ameren.io" autoStart="false" httpSecure="true" id="788d792e-feb5-45ed-8bec-6234f138ed31" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="788d792e-feb5-45ed-8bec-6234f138ed31fileName">Web-Chat-E-VS-2</con:setting>
+  </con:settings>
+  <con:properties/>
+  <con:constraints>
+    <con:congestion>0</con:congestion>
+    <con:inputBandwidth>-1</con:inputBandwidth>
+    <con:outputBandwidth>-1</con:outputBandwidth>
+    <con:maxThreadPoolCapacity>20</con:maxThreadPoolCapacity>
+    <con:coreThreadPoolCapacity>5</con:coreThreadPoolCapacity>
+    <con:virtError>
+      <con:start>0</con:start>
+      <con:endless>true</con:endless>
+    </con:virtError>
+  </con:constraints>
+  <con:headerValidator type="NONE"/>
+</con:restMockService>

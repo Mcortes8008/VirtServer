@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/web-chat/v2/status" method="GET" resourcePath="/web-chat/v2/status" id="f0ab656a-6af7-4716-b3ad-a68ffcc73c4e" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f0ab656a-6af7-4716-b3ad-a68ffcc73c4efileName">%2Fweb-chat%2Fv2%2Fstatus</con:setting>
+  </con:settings>
+  <con:defaultResponse>For state=MO</con:defaultResponse>
+  <con:dispatchStyle>PARAMETER</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer>
+    <con:ParameterDispatcherRule>
+      <con:ruleName>state=MO</con:ruleName>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EXISTS</con:parameterOperationType>
+        <con:parameterName>state</con:parameterName>
+        <con:parameterValue>MO</con:parameterValue>
+      </con:parameterDispatcherCondition>
+      <con:responseName>For state=MO</con:responseName>
+    </con:ParameterDispatcherRule>
+  </con:parameterDispatcherRuleContainer>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>true</con:saveRoutedResponse>
+  <con:response name="For state=MO" id="48f357f3-7ef1-44b6-807c-e9f7a2378032" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:script>qps = mockRequest.getQueryString().split('&amp;')
+def mapParams = qps.collectEntries { params -> params.split('=').collect { URLDecoder.decode(it)}}  
+if (mapParams['delay']){
+    for( String values : qps ) {
+        if ( values.contains("delay=") ) {
+            def delay = (values.split("=")[1]as int)
+            sleep(delay)
+        }
+    }
+} else {
+    int time = 200
+    sleep(time)
+}</con:script>
+    <con:responseContent>{
+  "success": true,
+  "apiName": "web-chat-e",
+  "timestamp": "2022-07-19T16:31:30.662Z",
+  "version": "1.0.6-SNAPSHOT",
+  "correlationId": "",
+  "data": {
+    "currentTime": "11:31:30",
+    "enableSubscription": true,
+    "isWithinHours": true,
+    "currentStartTime": "07:00:00",
+    "currentEndTime": "19:00:00",
+    "businessHoursOverride": "auto",
+    "isGenesysHealthy": true,
+    "genesysHealthOverride": "auto",
+    "isSalesforceHealthy": true,
+    "salesforceHealthOverride": "auto"
+  }
+}</con:responseContent>
+    <con:header>
+      <con:name>X-Frame-Options</con:name>
+      <con:value>SAMEORIGIN</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Strict-Transport-Security</con:name>
+      <con:value>max-age=31536000; includeSubdomains;</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-Content-Type-Options</con:name>
+      <con:value>nosniff</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>X-XSS-Protection</con:name>
+      <con:value>1; mode=block</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Tue, 19 Jul 2022 16:31:30 GMT</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>
